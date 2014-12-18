@@ -1,0 +1,3 @@
+.ruby-gemset
+config/secrets.yml
+config/database.yml

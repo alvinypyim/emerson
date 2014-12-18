@@ -6,7 +6,7 @@ set -e
 home="$(dirname "$0")/.."
 home="$(cd "$home" && pwd)"
 
-cat "$home/config/example_config_files" | while read file; do
+cat "$home/config/config_files" | while read file; do
 
   cp -v "$file".example "$file"
 done
