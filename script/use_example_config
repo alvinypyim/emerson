@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Exit on error
+set -e 
+
+home="$(dirname "$0")/.."
+home="$(cd "$home" && pwd)"
+
+cat "$home/config/example_config_files" | while read file; do
+
+  cp -v "$file".example "$file"
+done

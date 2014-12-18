@@ -1,5 +1,5 @@
 # Allow different gemset names
-.ruby-gemset
+/.ruby-gemset
 
 # Editor cache files
 *.sw?
