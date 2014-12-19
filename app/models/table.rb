@@ -12,4 +12,7 @@ class Table
 
   def place(x, y, object)
   end
+
+  def find(object)
+  end
 end

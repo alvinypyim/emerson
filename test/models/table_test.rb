@@ -88,4 +88,16 @@ class TableTest < ActiveSupport::TestCase
       assert_equal column.count(nil), 3
     }
   end
+
+  test 'find an object' do
+    table = Table.new(Rectangle.new(2, 2))
+
+    object = Object.new
+    table.map[1][0] = object
+    location = table.find(object)
+
+    assert_not_nil location
+    assert_equal location.x, 1
+    assert_equal location.y, 0
+  end
 end
