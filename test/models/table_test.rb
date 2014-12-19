@@ -5,7 +5,7 @@ class TableTest < ActiveSupport::TestCase
   def self.place(table, x, y)
     object = Object.new
 
-    table.place x, y, object
+    table.place Coordinate.new(x, y), object
     object
   end
 

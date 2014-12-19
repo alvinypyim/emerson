@@ -9,7 +9,7 @@ class Robot
   def move
     location = @table.find(self)
 
-    @table.place location.x, location.y, nil
+    @table.place location, nil
 
     case @direction
       when Direction::NORTH
@@ -22,7 +22,7 @@ class Robot
         location.x = location.x - 1
     end
 
-    @table.place location.x, location.y, self
+    @table.place location, self
   end
 
   def rotate(direction)

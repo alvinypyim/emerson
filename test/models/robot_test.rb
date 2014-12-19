@@ -9,7 +9,7 @@ class RobotTest < ActiveSupport::TestCase
   def self.create_robot_at(table, x, y, direction)
     robot = Robot.new(table, direction)
     
-    table.place(x, y, robot)
+    table.place(Coordinate.new(x, y), robot)
     robot
   end
 

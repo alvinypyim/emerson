@@ -10,9 +10,9 @@ class Table
     @map.map! { |column| column = Array.new(@dimension.height) }
   end
 
-  def place(x, y, object)
-    return if @map.length <= x or @map[x].length <= y
-    @map[x][y] = object
+  def place(location, object)
+    return if @map.length <= location.x or @map[location.x].length <= location.y
+    @map[location.x][location.y] = object
   end
 
   def find(object)
