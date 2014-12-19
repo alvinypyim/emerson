@@ -9,4 +9,7 @@ class Table
 
     @map.map! { |column| column = Array.new(@dimension.height) }
   end
+
+  def place(x, y, object)
+  end
 end
