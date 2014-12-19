@@ -14,5 +14,6 @@ class Table
   end
 
   def find(object)
+    Coordinate.new 0, 0
   end
 end
