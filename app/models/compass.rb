@@ -20,6 +20,7 @@ class Compass
     }
 
     directions.last.right = Direction.absolute.first
+    directions.last.relative_hash[Direction::RIGHT] = Direction.absolute.first
   end
 
   # Return the direction on this compass

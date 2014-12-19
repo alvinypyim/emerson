@@ -5,7 +5,7 @@ class TableTest < ActiveSupport::TestCase
   def self.place(table, x, y)
     object = Object.new
 
-    table.place 0, 0, object
+    table.place x, y, object
     object
   end
 
@@ -14,7 +14,7 @@ class TableTest < ActiveSupport::TestCase
 
     object = self.class.place(table, 1, 1)
 
-    assert_equal table.map[1][1], object
+    assert_equal object, table.map[1][1]
   end
 
   test 'place at the sw corner' do
@@ -22,7 +22,7 @@ class TableTest < ActiveSupport::TestCase
 
     object = self.class.place(table, 0, 0)
 
-    assert_equal table.map[0][0], object
+    assert_equal object, table.map[0][0]
   end
 
   test 'place at the nw corner' do
@@ -30,7 +30,7 @@ class TableTest < ActiveSupport::TestCase
 
     object = self.class.place(table, 0, 1)
 
-    assert_equal table.map[0][1], object
+    assert_equal object, table.map[0][1]
   end
 
   test 'place at the ne corner' do
@@ -38,7 +38,7 @@ class TableTest < ActiveSupport::TestCase
 
     object = self.class.place(table, 1, 1)
 
-    assert_equal table.map[1][1], object
+    assert_equal object, table.map[1][1]
   end
 
   test 'place at the se corner' do
@@ -46,7 +46,7 @@ class TableTest < ActiveSupport::TestCase
 
     object = self.class.place(table, 1, 0)
 
-    assert_equal table.map[1][0], object
+    assert_equal object, table.map[1][0]
   end
 
   test 'place outside the west boundary' do
@@ -55,7 +55,7 @@ class TableTest < ActiveSupport::TestCase
     object = self.class.place(table, -1, 1)
 
     table.map.each { |column|
-      assert_equal column.count(nil), 3
+      assert_equal 3, column.count(nil)
     }
   end
 
@@ -65,7 +65,7 @@ class TableTest < ActiveSupport::TestCase
     object = self.class.place(table, 1, 3)
 
     table.map.each { |column|
-      assert_equal column.count(nil), 3
+      assert_equal 3, column.count(nil)
     }
   end
 
@@ -75,7 +75,7 @@ class TableTest < ActiveSupport::TestCase
     object = self.class.place(table, 4, 1)
 
     table.map.each { |column|
-      assert_equal column.count(nil), 3
+      assert_equal 3, column.count(nil)
     }
   end
 
@@ -85,7 +85,7 @@ class TableTest < ActiveSupport::TestCase
     object = self.class.place(table, 1, -1)
 
     table.map.each { |column|
-      assert_equal column.count(nil), 3
+      assert_equal 3, column.count(nil)
     }
   end
 
@@ -97,7 +97,7 @@ class TableTest < ActiveSupport::TestCase
     location = table.find(object)
 
     assert_not_nil location
-    assert_equal location.x, 1
-    assert_equal location.y, 0
+    assert_equal 1, location.x
+    assert_equal 0, location.y
   end
 end

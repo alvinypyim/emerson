@@ -8,7 +8,7 @@ class RobotManagerTest < ActiveSupport::TestCase
     manager.send_command 'MOVE'
     manager.send_command 'REPORT'
 
-    assert_same manager.report, '0,1,NORTH'
+    assert_same '0,1,NORTH', manager.report
   end
 
   test 'valid movement 2' do
@@ -17,7 +17,7 @@ class RobotManagerTest < ActiveSupport::TestCase
     manager.send_command 'PLACE 0,0,NORTH'
     manager.send_command 'LEFT'
 
-    assert_same manager.report, '0,0,WEST'
+    assert_same '0,0,WEST', manager.report
   end
 
   test 'valid movement 3' do
@@ -29,6 +29,6 @@ class RobotManagerTest < ActiveSupport::TestCase
     manager.send_command 'LEFT'
     manager.send_command 'MOVE'
 
-    assert_same manager.report, '3,3,NORTH'
+    assert_same '3,3,NORTH', manager.report
   end
 end

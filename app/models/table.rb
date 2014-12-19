@@ -11,9 +11,14 @@ class Table
   end
 
   def place(x, y, object)
+    return if @map.length <= x or @map[x].length <= y
+    @map[x][y] = object
   end
 
   def find(object)
-    Coordinate.new 0, 0
+    @map.each_with_index { |column, column_index|
+      row_index = column.index(object)
+      return Coordinate.new(column_index, row_index) if row_index
+    }
   end
 end

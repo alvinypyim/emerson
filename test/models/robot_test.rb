@@ -18,7 +18,7 @@ class RobotTest < ActiveSupport::TestCase
 
     robot.rotate Direction::LEFT
 
-    assert_equal robot.direction, Direction::WEST
+    assert_equal Direction::WEST, robot.direction
   end
 
   test 'rotate right' do
@@ -26,7 +26,7 @@ class RobotTest < ActiveSupport::TestCase
 
     robot.rotate Direction::RIGHT
 
-    assert_equal robot.direction, Direction::SOUTH
+    assert_equal Direction::SOUTH, robot.direction
   end
 
   test 'rotate left 270 degrees' do
@@ -34,7 +34,7 @@ class RobotTest < ActiveSupport::TestCase
 
     3.times { robot.rotate Direction::RIGHT }
 
-    assert_equal robot.direction, Direction::WEST
+    assert_equal Direction::EAST, robot.direction
   end
 
   test 'move north' do
@@ -45,8 +45,8 @@ class RobotTest < ActiveSupport::TestCase
 
     location = table.find(robot)
 
-    assert_equal location.x, 0
-    assert_equal location.y, 1
+    assert_equal 0, location.x
+    assert_equal 1, location.y
   end
 
   test 'move east' do
@@ -57,8 +57,8 @@ class RobotTest < ActiveSupport::TestCase
 
     location = table.find(robot)
 
-    assert_equal location.x, 1
-    assert_equal location.y, 0
+    assert_equal 1, location.x
+    assert_equal 0, location.y
   end
 
   test 'move south' do
@@ -69,8 +69,8 @@ class RobotTest < ActiveSupport::TestCase
 
     location = table.find(robot)
 
-    assert_equal location.x, 0
-    assert_equal location.y, 0
+    assert_equal 0, location.x
+    assert_equal 0, location.y
   end
 
   test 'move west' do
@@ -81,8 +81,8 @@ class RobotTest < ActiveSupport::TestCase
 
     location = table.find(robot)
 
-    assert_equal location.x, 0
-    assert_equal location.y, 0
+    assert_equal 0, location.x
+    assert_equal 0, location.y
   end
 
   test 'prevent falling from north' do
@@ -95,8 +95,8 @@ class RobotTest < ActiveSupport::TestCase
 
       location = table.find(robot)
 
-      assert_equal location.x, 0
-      assert_equal location.y, 0
+      assert_equal 0, location.x
+      assert_equal 0, location.y
     }
   end
 end
