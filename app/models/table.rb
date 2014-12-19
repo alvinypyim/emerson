@@ -11,7 +11,7 @@ class Table
   end
 
   def place(location, object)
-    return if @map.length <= location.x or @map[location.x].length <= location.y
+    return unless contain? location
     @map[location.x][location.y] = object
   end
 
@@ -20,5 +20,11 @@ class Table
       row_index = column.index(object)
       return Coordinate.new(column_index, row_index) if row_index
     }
+  end
+
+  # Determine if the given location is on the surface of the table
+  def contain?(location)
+    @map.map.with_index { |v, i| i }.include? location.x and
+    @map[location.x].map.with_index { |v, i| i }.include? location.y
   end
 end
