@@ -10,5 +10,6 @@ class Robot
   end
 
   def rotate(direction)
+    @direction = Compass.new.get_direction(@direction).resolve(direction)
   end
 end
