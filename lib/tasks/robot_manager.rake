@@ -7,7 +7,7 @@ namespace :robot_manager do
 
     while command = STDIN.gets
       result = manager.send_command(command)
-      puts result  if result
+      puts result if result
     end
   end
 end
