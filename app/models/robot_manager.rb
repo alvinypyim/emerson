@@ -28,10 +28,12 @@ class RobotManager
 
     return unless robot
 
-    return robot.move if command == :move
-    return robot.rotate Direction::LEFT if command == :left
-    return robot.rotate Direction::RIGHT if command == :right
-    report if command == :report
+    return report if command == :report
+
+    robot.move if command == :move
+    robot.rotate Direction::LEFT if command == :left
+    robot.rotate Direction::RIGHT if command == :right
+    nil
   end
 
   def report
