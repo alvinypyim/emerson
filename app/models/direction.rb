@@ -1,7 +1,7 @@
 class Direction
   NORTH = :north
   EAST = :east
-  SOUTH = :sout
+  SOUTH = :south
   WEST = :west
 
   LEFT = :left
