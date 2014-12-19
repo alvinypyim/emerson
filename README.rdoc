@@ -15,6 +15,6 @@ might vary.  Generally, it includes the steps as follows.
 * <tt>bundle</tt> to install the gem dependencies
 
 * <tt>rake db:migrate:reset</tt> to create the database (this will be removed
-  in later releases
+  in later releases, as database isn't used at all for this project)
 
 To start the robot simulator run <tt>rake robot_manager:start</tt>
